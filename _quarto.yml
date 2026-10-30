@@ -1,0 +1,21 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Antigravity AI Tech Blog"
+  description: "AI 기반 리서치부터 글 작성, Quarto 퍼블리싱까지 자동화된 기술 블로그"
+  navbar:
+    right:
+      - about.qmd
+      - icon: github
+        href: https://github.com/
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-title: "목차 (On this page)"
+    code-copy: true
+

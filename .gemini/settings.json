@@ -1,0 +1,12 @@
+{
+  "custom_tools": {
+    "enabled": true,
+    "get_tools": "python get_tools.py",
+    "call_tool": "python call_tool.py"
+  },
+  "tools": {
+    "get_tools": "python get_tools.py",
+    "call_tool": "python call_tool.py"
+  }
+}
+

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://antigravity.google/schemas/settings.json",
+  "name": "antigravity_blog",
+  "version": "1.0.0",
+  "description": "참고 자료 기반 블로그 자동 작성 및 Quarto 게시 파이프라인 커스텀 도구 설정",
+  "custom_tools": {
+    "enabled": true,
+    "get_tools": "python get_tools.py",
+    "call_tool": "python call_tool.py"
+  },
+  "tools": {
+    "get_tools": "python get_tools.py",
+    "call_tool": "python call_tool.py",
+    "items": [
+      {
+        "name": "blog",
+        "description": "참고 자료(텍스트 또는 search.md)를 기반으로 구조화된 마크다운 블로그 포스트(draft.md)를 작성하고 저장합니다.",
+        "schema_provider": "get_tools.py",
+        "executor": "call_tool.py",
+        "parameters": {
+          "topic": {
+            "type": "string",
+            "required": true,
+            "description": "블로그 포스트 주제 또는 제목"
+          },
+          "references": {
+            "type": "string",
+            "required": true,
+            "description": "참고 자료 내용 또는 파일 경로(search.md)"
+          },
+          "output_path": {
+            "type": "string",
+            "default": "draft.md",
+            "description": "저장할 마크다운 파일 경로"
+          },
+          "image_path": {
+            "type": "string",
+            "default": "image.jpg",
+            "description": "포스트 대표 이미지 경로"
+          },
+          "categories": {
+            "type": "array",
+            "description": "블로그 카테고리 태그 목록"
+          }
+        }
+      }
+    ]
+  }
+}
+
